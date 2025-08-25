@@ -1,9 +1,9 @@
-import { Text, View } from "react-native";
+import { Container, Title } from "./styles";
 
 export function Groups() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Groups</Text>
-    </View>
+    <Container>
+      <Title>Groups</Title>
+    </Container>
   );
 }
