@@ -2,17 +2,26 @@ import { Header } from "@/components/Header";
 import { Container } from "./styles";
 import { Highlight } from "@/components/Highlight";
 import { GroupCard } from "@/components/GroupCard";
+import { useState } from "react";
+import { FlatList } from "react-native";
+import { ListEmpty } from "@/components/ListEmpty";
 
 export function Groups() {
-  const handleTest = () => {
-    console.log("test");
-  };
+  const [groups, setGroups] = useState<string[]>(["Galera da VOTU"]);
 
   return (
     <Container>
       <Header />
       <Highlight title="Turmas" subtitle="Jogue com a sua turma" />
-      <GroupCard onPress={handleTest} title="Lenda" />
+      <FlatList
+        contentContainerStyle={groups.length === 0 && { flex: 1 }}
+        ListEmptyComponent={() => (
+          <ListEmpty message="Que tal cadastrar a primeira turma?" />
+        )}
+        data={groups}
+        keyExtractor={(item) => item}
+        renderItem={({ item }) => <GroupCard title={item} />}
+      />
     </Container>
   );
 }
