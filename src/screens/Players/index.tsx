@@ -1,5 +1,5 @@
 import { Header } from "@/components/Header";
-import { Container, Form, HeaderList, NumbersOfPlayers } from "./styles";
+import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 import { Highlight } from "@/components/Highlight";
 import { Input } from "@/components/Input";
 import { ButtonIcon } from "@/components/ButtonIcon";
@@ -49,7 +49,7 @@ export function Players() {
             />
           )}
         />
-        <NumbersOfPlayers>{players.length}</NumbersOfPlayers>
+        <NumberOfPlayers>{players.length}</NumberOfPlayers>
       </HeaderList>
 
       <FlatList
