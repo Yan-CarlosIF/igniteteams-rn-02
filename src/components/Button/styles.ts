@@ -5,6 +5,7 @@ export type ButtonTypeStyleProps = "PRIMARY" | "SECONDARY";
 
 type Props = {
   type: ButtonTypeStyleProps;
+  disabled?: boolean;
 };
 
 export const Container = styled(TouchableOpacity)<Props>`
@@ -19,6 +20,8 @@ export const Container = styled(TouchableOpacity)<Props>`
 
   justify-content: center;
   align-items: center;
+
+  opacity: ${({ disabled }) => (disabled ? 0.7 : 1)};
 `;
 
 export const Title = styled.Text`
